@@ -1,4 +1,6 @@
-# Build
+# kyria keyboard ZMK config
+
+## BUILD
 
 Mostly, this is following the steps from `.github/workflows/build.yml`:
 
