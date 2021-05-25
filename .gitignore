@@ -1,0 +1,7 @@
+.west
+modules
+tools
+zephyr
+zmk
+build
+*.uf2
