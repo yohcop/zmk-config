@@ -15,13 +15,13 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | ESC |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U  |  I  |  O  |  P  | BKS |
 // | TAB |  A  |  S  |  D  |  F  |  G  |                             |  H  |  J  |  K  |  L  |  ;  |  '  |
-// | GUI |  Z  |  X  |  C  |  V  |  B  | MO2 | ALT |     | CTL | MO1 |  N  |  M  |  ,  |  .  |  /  | GUI |
-//                   | PLY | SHF | MO1 | SPC | CTL |     | ALT | RET | MO2 | SHF | GUI |
+// | SHF |  Z  |  X  |  C  |  V  |  B  | MO2 | ALT |     | CTL | MO1 |  N  |  M  |  ,  |  .  |  /  | DEL |
+//                   | PLY | GUI | MO1 | SPC | CTL |     | SHF | RET | MO2 | ALT | GUI |
             bindings = <
-    &kp ESC &kp Q &kp W &kp E      &kp R     &kp T                                          &kp Y &kp U     &kp I     &kp O   &kp P    &kp BKSP
-    &kp TAB &kp A &kp S &kp D      &kp F     &kp G                                          &kp H &kp J     &kp K     &kp L   &kp SEMI &kp SQT
-    &kp GUI &kp Z &kp X &kp C      &kp V     &kp B &mo 2     &kp LALT     &kp RCTRL &mo 1   &kp N &kp M     &kp COMMA &kp DOT &kp FSLH &kp RGUI
-                        &kp C_PLAY &kp LSHFT &mo 1 &kp SPACE &kp LCTRL    &kp RALT  &kp RET &mo 2 &kp RSHFT &kp RGUI
+    &kp ESC   &kp Q &kp W &kp E      &kp R   &kp T                                        &kp Y &kp U   &kp I     &kp O   &kp P    &kp BKSP
+    &kp TAB   &kp A &kp S &kp D      &kp F   &kp G                                        &kp H &kp J   &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LSHFT &kp Z &kp X &kp C      &kp V   &kp B &mo 2     &kp LALT   &kp RCTRL &mo 1   &kp N &kp M   &kp COMMA &kp DOT &kp FSLH &kp DEL
+                          &kp C_PLAY &kp GUI &mo 1 &kp SPACE &kp LCTRL  &kp RSHFT &kp RET &mo 2 &kp RALT &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
@@ -45,12 +45,12 @@
 
         layer_2 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |  F1  |  F2  |  F3   |  F4  |  F5  |                                  |  F6  |  F7  |  F8  |  F9   | F10   |       |
-// |       | MUTE | NEXT | N-TRK | PLAY | VOL+ |                                  | LEFT | DOWN |  UP  | RIGHT | F11   |       |
-// |       |      | PREV | P-TRK | PAUS | VOL- |      |        |  |        |      | HOME | P-DW | P-UP |  END  | F12   |       |
+// |       |  F1  |  F2  |  F3   |  F4  |  F5  |                                  |  F6  |  F7  |  F8  |  F9   | F10  |     |
+// |       | MUTE | NEXT | N-TRK | PLAY | VOL+ |                                  | LEFT | DOWN |  UP  | RIGHT | F11  |     |
+// |       |      | PREV | P-TRK | PAUS | VOL- |      |        |  |        |      | HOME | P-DW | P-UP |  END  | F12  |     |
 //                       |       |      |      |      |        |  |        |      |      |      |      |
             bindings = <
-    &trans &kp F1     &kp F2     &kp F3   &kp F4      &kp F5                                  &kp F6   &kp F7   &kp F8   &kp F9    &kp F10 &none
+    &trans &kp F1     &kp F2     &kp F3   &kp F4      &kp F5                                  &kp F6   &kp F7   &kp F8   &kp F9    &kp F10 &trans
     &trans &kp C_MUTE &kp C_NEXT &kp C_FF &kp C_PLAY  &kp VOLU                                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp F11 &none
     &trans &none      &kp C_PREV &kp C_RW &kp C_PAUSE &kp VOLD &trans &trans    &trans &trans &kp HOME &kp PGDN &kp PGUP &kp END   &kp F12 &trans
                                  &trans   &trans      &trans   &trans &trans    &trans &trans &trans   &trans   &trans
