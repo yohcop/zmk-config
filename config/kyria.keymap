@@ -18,10 +18,10 @@
 // | SHF |  Z  |  X  |  C  |  V  |  B  | MO2 | ALT |     | CTL | MO1 |  N  |  M  |  ,  |  .  |  /  | DEL |
 //                   | PLY | GUI | MO1 | SPC | CTL |     | SHF | RET | MO2 | ALT | GUI |
             bindings = <
-    &kp ESC   &kp Q &kp W &kp E      &kp R   &kp T                                        &kp Y &kp U   &kp I     &kp O   &kp P    &kp BKSP
-    &kp TAB   &kp A &kp S &kp D      &kp F   &kp G                                        &kp H &kp J   &kp K     &kp L   &kp SEMI &kp SQT
-    &kp LSHFT &kp Z &kp X &kp C      &kp V   &kp B &mo 2     &kp LALT   &kp RCTRL &mo 1   &kp N &kp M   &kp COMMA &kp DOT &kp FSLH &kp DEL
-                          &kp C_PLAY &kp GUI &mo 1 &kp SPACE &kp LCTRL  &kp RSHFT &kp RET &mo 2 &kp RALT &kp RGUI
+    &kp ESC   &kp Q &kp W &kp E      &kp R    &kp T                                        &kp Y &kp U    &kp I     &kp O   &kp P    &kp BKSP
+    &kp TAB   &kp A &kp S &kp D      &kp F    &kp G                                        &kp H &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+    &kp LSHFT &kp Z &kp X &kp C      &kp V    &kp B &mo 2     &kp LALT   &kp RCTRL &mo 1   &kp N &kp M    &kp COMMA &kp DOT &kp FSLH &kp DEL
+                          &kp C_PLAY &kp LGUI &mo 1 &kp SPACE &kp LCTRL  &kp RSHFT &kp RET &mo 2 &kp RALT &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
