@@ -25,5 +25,3 @@ rm -rf build
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
 ```
-
-hello   world foo bar baz I need to get used to this i can see the delay and it's infuriating
