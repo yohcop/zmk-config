@@ -5,7 +5,7 @@
 Mostly, this is following the steps from `.github/workflows/build.yml`:
 
 ```
-docker run --name zmk --rm -v $(pwd)/:/zmk -it zmkfirmware/zmk-build-arm:2.4
+docker run --name zmk --rm -v $(pwd)/:/zmk -it zmkfirmware/zmk-build-arm:2.5
 ```
 
 Then in the container:
@@ -25,3 +25,5 @@ rm -rf build
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
 ```
+
+hello   world foo bar baz I need to get used to this i can see the delay and it's infuriating
