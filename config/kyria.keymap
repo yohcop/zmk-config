@@ -11,6 +11,15 @@
 
 / {
     behaviors {
+        tm: thumb_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+        };
         lhm: left_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
@@ -84,20 +93,73 @@
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
         };
 
+// ---------------------------------------------------------------------------------------------------------------------------------
+// This starts the completely new layer system. They are on their own, but just shifted down to facilitate switching back to the
+// old layers.
+// ---------------------------------------------------------------------------------------------------------------------------------
+
         layer_3 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |     |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U  |  I  |  O  |  P  |     |
-// |     | S/A | G/S | C/D | A/F |  G  |                             |  H  |  J  |  K  |  L  |  ;  | L0  |
-// |     |  Z  |  X  |  C  |  V  |  B  | MO2 | ALT |     | CTL | MO1 |  N  |  M  |  ,  |  .  |  /  |     |
-//                   |     | GUI | MO1 | SPC | CTL |     | SHF | RET | MO2 | ALT | GUI |
+// |     |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  ;  |     |
+// |     |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  |     |
+// |     |  X  |  C  |  D  |  V  |  Z  |     |     |     |     | L0  |  K  |  H  |  ,  |  .  |  /  |     |
+//                   |     |4/Esc|6/SPC|S/TAB|     |     |     |6/RET|  L5 |C/BKS|     |
             bindings = <
-    &none &kp Q        &kp W       &kp E        &kp R       &kp T                                     &kp Y &kp U       &kp I        &kp O       &kp P           &none
-    &none &lhm LSHFT A &lhm LGUI S &lhm LCTRL D &lhm LALT F &kp G                                     &kp H &rhm RALT J &rhm RCTRL K &rhm RGUI L &rhm RSHFT SEMI &to 0
-    &none &kp Z        &kp X       &kp C        &kp V       &kp B   &none     &none     &none &none   &kp N &kp M       &kp COMMA    &kp DOT     &kp FSLH        &none
-                                   &none        &kp ESC     &kp TAB &kp SPACE &none     &none &kp RET &mo 2 &kp BKSP    &none
+    &none &kp Q &kp W &kp F &kp P     &kp B                                               &kp J &kp L         &kp U     &kp Y   &kp SEMI &none
+    &none &kp A &kp R &kp S &kp T     &kp G                                               &kp M &kp N         &kp E     &kp I   &kp O    &none
+    &none &kp X &kp C &kp D &kp V     &kp Z       &none         &none     &none &to 0     &kp K &kp H         &kp COMMA &kp DOT &kp FSLH &none
+                      &none &lt 4 ESC &lt 6 SPACE &tm LSHFT TAB &none     &none &lt 6 RET &mo 5 &tm RCTL BKSP &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
+        };
+
+        layer_4 {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |   0   |      |
+// |       |  !  |  @  |  #  |  $  |  %  |                                 |  ^  |  &  |  *  |  (  |   )   |      |
+// |       |  `  |  ~  |  |  |  =  |  +  |     |        |  |        |      |  _  |  [  |  ]  |  {  |   }   |      |
+//                     |     |     |  -  |  \  |        |  |        |      |     |     |     |
+            bindings = <
+    &trans &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                                    &kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &trans
+    &trans &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCT                                  &kp CRRT  &kp AMPS &kp STAR &kp LPAR &kp RPAR &trans
+    &trans &kp GRAV &kp TILD &kp PIPE &kp EQL  &kp PLUS  &trans   &trans   &trans &trans &kp UNDER &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans
+                             &trans   &trans   &kp MINUS &kp BSLH &trans   &trans &trans &trans    &trans   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        layer_5 {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       |      |      |       |      |      |                                  |  F12 | SHFT | CTRL |  ALT  | GUI  |BT/USB|
+// |       |      |      |       |      |      |                                  | LEFT | DOWN |  UP  | RIGHT |      |     |
+// |       |      |      |       |      |      |      |        |  |        |      | HOME | P-DW | P-UP |  END  |      |     |
+//                       |       |      |      |      |        |  |        |      |      |      |      |
+            bindings = <
+    &trans &trans &trans &trans &trans &trans                                &kp F12  &kp RSHFT &kp RCTRL &kp LALT  &kp LGUI &out OUT_TOG
+    &trans &trans &trans &trans &trans &trans                                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp F11  &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &kp HOME &kp PGDN  &kp PGUP  &kp END   &kp F12  &trans
+                         &trans &trans &trans &trans &trans    &trans &trans &trans   &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        layer_6 {
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |       | GUI | ALT | CTRL | SHFT | F11 |                                  |      |      |      |     |      |     |
+// |       | F1  | F2  | F3   | F4   | F5  |                                  |      |      |      |     |      |     |
+// |       | F6  | F7  | F8   | F9   | F10 |      |        |  |        |      |      |      |      |     |      |     |
+//                     |      |      |     |      |        |  |        |      |      |      |      |
+            bindings = <
+    &trans &kp LGUI &kp LALT &kp LCTRL &kp LSHFT &kp F11                                &trans &trans &trans &trans &trans &trans
+    &trans &kp F1   &kp F2   &kp F3    &kp F4    &kp F5                                 &trans &trans &trans &trans &trans &trans
+    &trans &kp F6   &kp F7   &kp F8    &kp F9    &kp F10 &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+                             &trans    &trans    &trans  &trans &trans    &trans &trans &trans &trans &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
         };
 
     };
