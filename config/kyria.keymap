@@ -93,12 +93,12 @@
 // |     |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  ;  |     |
 // | `~  |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  |  '  |
 // |     |  Z  |  X  |  C  |  D  |  V  |     |     |     |     | L0  |  K  |  H  |  ,  |  .  |  /  |     |
-//                   |     |6/Esc|4/SPC|S/TAB|     |     |     |C/BKS|5/RET|7/DEL|     |
+//                   |     |6/Esc|4/TAB|S/SPC|     |     |     |C/RET|5/BKS|7/DEL|     |
             bindings = <
-    &none    &kp Q &kp W &kp F &kp P     &kp B                                                   &kp J     &kp L     &kp U     &kp Y   &kp SEMI &none
-    &kp GRAV &kp A &kp R &kp S &kp T     &kp G                                                   &kp M     &kp N     &kp E     &kp I   &kp O    &kp SQT
-    &none    &kp Z &kp X &kp C &kp D     &kp V       &none         &none     &none &to 0         &kp K     &kp H     &kp COMMA &kp DOT &kp FSLH &none
-                         &none &lt 6 ESC &lt 4 SPACE &tm LSHFT TAB &none     &none &tm RCTL BKSP &lt 5 RET &lt 7 DEL &none
+    &none    &kp Q &kp W &kp F &kp P     &kp B                                                  &kp J      &kp L     &kp U     &kp Y   &kp SEMI &none
+    &kp GRAV &kp A &kp R &kp S &kp T     &kp G                                                  &kp M      &kp N     &kp E     &kp I   &kp O    &kp SQT
+    &none    &kp Z &kp X &kp C &kp D     &kp V     &none           &none     &none &to 0        &kp K      &kp H     &kp COMMA &kp DOT &kp FSLH &none
+                         &none &lt 6 ESC &lt 4 TAB &tm LSHFT SPACE &none     &none &tm RCTL RET &lt 5 BKSP &lt 7 DEL &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
@@ -159,9 +159,9 @@
 // |       |     |     |      |      |     |      |        |~~|        |      |     |      |      | F11 | F12 |     |
 //                     |      |      |     |      |        |~~|        |      |     |      |      |
             bindings = <
-    &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7          &kp F8        &kp F9        &kp F10         &none
-    &trans &trans &trans &trans &trans &trans                                &trans &sm RSHFT RSHFT &sm RCTL RCTL &sm RALT RALT &sm RSHFT RSHFT &none
-    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans          &trans        &trans        &trans          &none
+    &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7          &kp F8        &kp F9        &kp F10       &none
+    &trans &trans &trans &trans &trans &trans                                &trans &sm RSHFT RSHFT &sm RCTL RCTL &sm RALT RALT &sm RGUI RGUI &none
+    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans          &trans        &trans        &trans        &none
                                 &trans &trans &trans &trans    &trans &trans &trans &trans          &trans
             >;
 
