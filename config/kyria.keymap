@@ -28,7 +28,6 @@
             quick-tap-ms = <0>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            retro-tap;
         };
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -133,10 +132,10 @@
         layer_4 {
 // Hold keys are the same as above, munus the outer column
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |  1  |  2  |  3  |  4  |  5  |                           |  6  |  7  |  8  |  9  |   0   |      |
-// |       |  !  |  @  |  #  |  $  |  %  |                           |  ^  |  &  |  *  |  (  |   )   |      |
-// |       |  \  |  |  |  =  |  +  |  -  |     |     |~~|     |      |  _  |  {  |  }  |  [  |   ]   |      |
-//                     |     |     |     |     |     |~~|     |      |     |     |     |
+// |     |  1  |  2  |  3  |  4  |  5  |                           |  6  |  7  |  8  |  9  |  0   |     |
+// |     |  !  |  @  |  #  |  $  |  %  |                           |  ^  |  &  |  *  |  (  |  )   |     |
+// |     |  \  |  |  |  =  |  +  |  -  |     |     |~~|     |      |  _  |  {  |  }  |  [  |  ]   |     |
+//                   |     |     |     |     |     |~~|     |      |     |     |     |
             bindings = <
     &none &kp N1   &hm LA(LGUI) N2   &hm LC(LGUI) N3   &hm LA(LCTRL) N4   &hm LS(LC(LA(LGUI))) N5                                &hm RS(RC(RA(RGUI))) N6 &hm RA(RCTRL) N7   &hm LC(RGUI) N8   &hm RA(RGUI) N9   &kp N0   &none
     &none &kp EXCL &hm    LGUI  AT   &hm    LALT  HASH &hm    LCTRL  DLLR &hm LC(LA(LGUI)) PRCT                                  &hm RC(RA(RGUI)) CRRT   &hm    RCTRL  AMPS &hm    RALT  STAR &hm    RGUI  LPAR &kp RPAR &none
@@ -149,10 +148,10 @@
 
         layer_5 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |      |      |       |      |      |                                  |      |      |      |       |      |BT/USB|
-// |       |      |      |       |      |      |                                  | LEFT | DOWN |  UP  | RIGHT |      |      |
-// |       |      |      |       |      |      |      |        |  |        |      | HOME | P-DW | P-UP |  END  |      |      |
-//                       |       |      |      |      |        |  |        |      |      |      |      |
+// |     |     |     |     |     |     |                          |     |     |     |     |     |BTUSB|
+// |     |     |     |     |     |     |                          |LEFT |DOWN | UP  |RIGHT|     |     |
+// |     |     |     |     |     |     |     |     |  |     |     |HOME |P-DW |P-UP | END |     |     |
+//                   |     |     |     |     |     |  |     |     |     |     |     |
             bindings = <
     &trans &trans &trans &trans &trans &trans                                &none    &none     &none     &none     &none    &out OUT_TOG
     &trans &trans &trans &trans &trans &trans                                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none    &trans
@@ -165,15 +164,15 @@
 
         layer_6 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       | F1  | F2  | F3   | F4   | F5  |                                  |      |      |      |     |     |     |
-// |       |     |     |      |      |     |      |        |  |        |      |      |      |      |     |     |     |
-// |       |     |     |      |      |     |      |        |  |        |      |      |      |      |     |     |     |
-//                     |      |      |     |      |        |  |        |      |      |      |      |
+// |     | F1  | F2  | F3  | F4  | F5  |                          |     |     |     |     |     |     |
+// |     |NEXT | FWD |PLAY |VOL-U|MUTE |                          |     |     |     |     |     |     |
+// |     |PREV | BWD |PAUSE|VOL-D|     |     |     |~~|     |     |     |     |     |     |     |     |
+//                   |     |     |     |     |     |~~|     |     |     |     |     |
             bindings = <    
-    &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                 &trans &trans &trans &trans &trans &trans
-    &trans &none  &none  &none  &none  &none   &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
-    &trans &none  &none  &none  &none  &none   &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
-                         &trans &trans &trans  &trans &trans    &trans &trans &trans &trans &trans
+    &trans &kp F1     &kp F2   &kp F3      &kp F4   &kp F5                                    &trans &trans &trans &trans &trans &trans
+    &trans &kp C_NEXT &kp C_FF &kp C_PLAY  &kp VOLU &kp C_MUTE &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &kp C_PREV &kp C_RW &kp C_PAUSE &kp VOLD &trans     &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans 
+                               &trans      &trans   &trans     &trans &trans    &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
@@ -181,10 +180,10 @@
 
         layer_7 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |     |                                  | F6  |  F7  |  F8  | F9  | F10 |     |
-// |       |     |     |      |      |     |      |        |  |        |      |     |      |      |     |     |     |
-// |       |     |     |      |      |     |      |        |~~|        |      |     |      |      | F11 | F12 |     |
-//                     |      |      |     |      |        |~~|        |      |     |      |      |
+// |     |     |     |     |     |     |                          | F6  | F7  | F8  | F9  | F10 |     |
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+// |     |     |     |     |     |     |     |     |~~|     |     |     |     |     | F11 | F12 |     |
+//                   |     |     |     |     |     |~~|     |     |     |     |     |
             bindings = <
     &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
     &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans  &none
