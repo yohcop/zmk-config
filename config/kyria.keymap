@@ -11,6 +11,25 @@
 
 / {
     behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hl: hold_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&kp>, <&kp>;
+            retro-tap;
+        };
         tm: thumb_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_MODS";
@@ -90,31 +109,39 @@
 
         layer_3 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |     |  Q  |  W  |  F  |  P  |  B  |                             |  J  |  L  |  U  |  Y  |  ;  |     |
-// | `~  |  A  |  R  |  S  |  T  |  G  |                             |  M  |  N  |  E  |  I  |  O  |  '  |
-// |     |  Z  |  X  |  C  |  D  |  V  |     |     |     |     | L0  |  K  |  H  |  ,  |  .  |  /  |     |
-//                   |     |6/Esc|4/TAB|S/SPC|     |     |     |C/RET|5/BKS|7/DEL|     |
+// Hold keys: (mods are symetrical)
+// |     |     | A-G | C-G | C-A |SCA-G|                          |     |     |     |     |     |     |
+// |     |  `  |  G  |  A  |  C  | CAG |                          |     |     |     |     |  '  |     |
+// |     |  ~  | S-G | S-A | S-C | SCA |     |     |~~|     |     |     |     |     |     |  "  |     |
+//                   |     | L6  | L4  | Shf |     |~~|     | Shf | L5  | L7  |     |     
+// ---------------------------------------------------------------------------------------------------------------------------------
+// Tap keys:
+// |     |  Q  |  W  |  F  |  P  |  B  |                          |  J  |  L  |  U  |  Y  |  ;  |     |
+// |     |  A  |  R  |  S  |  T  |  G  |                          |  M  |  N  |  E  |  I  |  O  |     |
+// |     |  Z  |  X  |  C  |  D  |  V  |     |     |~~|     | L0  |  K  |  H  |  ,  |  .  |  /  |     |
+//                   |     | Esc | TAB | SPC |     |~~|     | RET | BKS | DEL |     |
             bindings = <
-    &none    &kp Q &kp W &kp F &kp P     &kp B                                                  &kp J      &kp L     &kp U     &kp Y   &kp SEMI &none
-    &kp GRAV &kp A &kp R &kp S &kp T     &kp G                                                  &kp M      &kp N     &kp E     &kp I   &kp O    &kp SQT
-    &none    &kp Z &kp X &kp C &kp D     &kp V     &none           &none     &none &to 0        &kp K      &kp H     &kp COMMA &kp DOT &kp FSLH &none
-                         &none &lt 6 ESC &lt 4 TAB &tm LSHFT SPACE &none     &none &tm RCTL RET &lt 5 BKSP &lt 7 DEL &none
+    &none &kp Q      &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                                               &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI     &none
+    &none &hl GRAV A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                                   &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &hl SQT O    &none
+    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V     &none           &none     &none &to 0         &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &hl DQT FSLH &none
+                                    &none          &lt 6 ESC       &lt 4 TAB              &tm LSHFT SPACE &none     &none &tm RSHFT RET &lt 5 BKSP             &lt 7 DEL       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
         };
 
         layer_4 {
+// Hold keys are the same as above, munus the outer column
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |  1  |  2  |  3  |  4  |  5  |                                 |  6  |  7  |  8  |  9  |   0   |      |
-// |       |  !  |  @  |  #  |  $  |  %  |                                 |  ^  |  &  |  *  |  (  |   )   |      |
-// |       |  \  |  |  |  =  |  +  |  -  |     |     |        |     |      |  _  |  {  |  }  |  [  |   ]   |      |
-//                     |     |     |     |     |     |        |     |      |     |     |     |
+// |       |  1  |  2  |  3  |  4  |  5  |                           |  6  |  7  |  8  |  9  |   0   |      |
+// |       |  !  |  @  |  #  |  $  |  %  |                           |  ^  |  &  |  *  |  (  |   )   |      |
+// |       |  \  |  |  |  =  |  +  |  -  |     |     |~~|     |      |  _  |  {  |  }  |  [  |   ]   |      |
+//                     |     |     |     |     |     |~~|     |      |     |     |     |
             bindings = <
-    &none &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                                   &kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &none
-    &none &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCT                                 &kp CRRT  &kp AMPS &kp STAR &kp LPAR &kp RPAR &none
-    &none &kp BSLH &kp PIPE &kp EQL  &kp PLUS &kp MINUS &trans &trans    &trans &trans &kp UNDER &kp LBRC &kp RBRC &kp LBKT &kp RBKT &none
-                            &trans   &trans   &trans    &trans &trans    &trans &trans &trans    &trans   &trans
+    &none &kp N1   &hm LA(LGUI) N2   &hm LC(LGUI) N3   &hm LA(LCTRL) N4   &hm LS(LC(LA(LGUI))) N5                                &hm RS(RC(RA(RGUI))) N6 &hm RA(RCTRL) N7   &hm LC(RGUI) N8   &hm RA(RGUI) N9   &kp N0   &none
+    &none &kp EXCL &hm    LGUI  AT   &hm    LALT  HASH &hm    LCTRL  DLLR &hm LC(LA(LGUI)) PRCT                                  &hm RC(RA(RGUI)) CRRT   &hm    RCTRL  AMPS &hm    RALT  STAR &hm    RGUI  LPAR &kp RPAR &none
+    &none &kp BSLH &hm LS(LGUI) PIPE &hm LS(LALT) EQL  &hm LS(LCTRL) PLUS &hm LS(LC(LALT)) MINUS  &trans &trans    &trans &trans &hm RS(RC(RALT)) UNDER  &hm RS(RCTRL) LBRC &hm LS(RALT) RBRC &hm RS(RGUI) LBKT &kp RBKT &none
+                                     &trans            &trans             &trans                  &trans &trans    &trans &trans &trans                  &trans             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp PG_UP PG_DN>;
@@ -139,14 +166,14 @@
         layer_6 {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |       | F1  | F2  | F3   | F4   | F5  |                                  |      |      |      |     |     |     |
-// |       | GUI | ALT | CTRL | SHFT |     |                                  |      |      |      |     |     |     |
+// |       |     |     |      |      |     |      |        |  |        |      |      |      |      |     |     |     |
 // |       |     |     |      |      |     |      |        |  |        |      |      |      |      |     |     |     |
 //                     |      |      |     |      |        |  |        |      |      |      |      |
             bindings = <    
-    &trans &kp F1        &kp F2        &kp F3          &kp F4          &kp F5                                 &trans &trans &trans &trans &trans &trans
-    &trans &sm LGUI LGUI &sm LALT LALT &sm LCTRL LCTRL &sm LSHFT LSHFT &none                                  &trans &trans &trans &trans &trans &trans
-    &trans &none         &none         &none           &none           &none   &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
-                                       &trans          &trans          &trans  &trans &trans    &trans &trans &trans &trans &trans
+    &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                                 &trans &trans &trans &trans &trans &trans
+    &trans &none  &none  &none  &none  &none   &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+    &trans &none  &none  &none  &none  &none   &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans
+                         &trans &trans &trans  &trans &trans    &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
@@ -155,14 +182,14 @@
         layer_7 {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |       |     |     |      |      |     |                                  | F6  |  F7  |  F8  | F9  | F10 |     |
-// |       |     |     |      |      |     |                                  |     | SHFT | CTRL | ALT | GUI |     |
+// |       |     |     |      |      |     |      |        |  |        |      |     |      |      |     |     |     |
 // |       |     |     |      |      |     |      |        |~~|        |      |     |      |      | F11 | F12 |     |
 //                     |      |      |     |      |        |~~|        |      |     |      |      |
             bindings = <
-    &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7          &kp F8        &kp F9        &kp F10       &none
-    &trans &trans &trans &trans &trans &trans                                &trans &sm RSHFT RSHFT &sm RCTL RCTL &sm RALT RALT &sm RGUI RGUI &none
-    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans          &trans        &trans        &trans        &none
-                                &trans &trans &trans &trans    &trans &trans &trans &trans          &trans
+    &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &none
+    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans  &none
+    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans  &none
+                                &trans &trans &trans &trans    &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
