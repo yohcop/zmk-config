@@ -102,18 +102,18 @@
 // |     |     | A-G | C-G | C-A |SCA-G|                          |     |     |     |     |     |     |
 // |     |  `  |  G  |  A  |  C  | CAG |                          |     |     |     |     |  '  |     |
 // |     |  ~  | S-G | S-A | S-C | SCA |     |     |~~|     |     |     |     |     |     |  "  |     |
-//                   |     | L6  | L4  | Shf |     |~~|     | L5  | Shf | L7  |     |     
+//                   |     | L6  | L4  | Shf |     |~~|     | Shf | L5  | L7  |     |     
 // ---------------------------------------------------------------------------------------------------------------------------------
 // Tap keys:
 // |     |  Q  |  W  |  F  |  P  |  B  |                          |  J  |  L  |  U  |  Y  |  ;  |     |
 // |     |  A  |  R  |  S  |  T  |  G  |                          |  M  |  N  |  E  |  I  |  O  |     |
 // |     |  Z  |  X  |  C  |  D  |  V  |     |     |~~|     | L0  |  K  |  H  |  ,  |  .  |  /  |     |
-//                   |     | Esc | TAB | SPC |     |~~|     | BKS | RET | DEL |     |
+//                   |     | Esc | SPC | TAB |     |~~|     | RET | BKS | DEL |     |
             bindings = <
     &none &kp Q      &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                                             &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI     &none
     &none &hl GRAV A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                                 &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &hl SQT O    &none
-    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V     &none           &none     &none &to 0       &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &hl DQT FSLH &none
-                                    &none          &lt 6 ESC       &lt 4 TAB              &tm LSHFT SPACE &none     &none &lt 5 BKSP  &tm RSHFT RET          &lt 7 DEL       &none
+    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V     &none         &none     &none &to 0         &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &hl DQT FSLH &none
+                                    &none          &lt 6 ESC       &lt 4 SPACE            &tm LSHFT TAB &none     &none &tm RSHFT RET &lt 5 BKSP             &lt 7 DEL       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
