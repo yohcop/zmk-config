@@ -5,6 +5,7 @@
 Mostly, this is following the steps from `.github/workflows/build.yml`:
 
 ```
+docker pull zmkfirmware/zmk-build-arm:stable
 docker run --name zmk --rm -v $(pwd)/:/zmk -it zmkfirmware/zmk-build-arm:stable
 ```
 

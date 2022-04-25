@@ -45,15 +45,21 @@
 
         default_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | ESC |  Q  |  W  |  E  |  R  |  T  |                             |  Y  |  U  |  I  |  O  |  P  | BKS |
-// | TAB |  A  |  S  |  D  |  F  |  G  |                             |  H  |  J  |  K  |  L  |  ;  |  '  |
-// | SHF |  Z  |  X  |  C  |  V  |  B  | MO2 | ALT |     | L3  | MO1 |  N  |  M  |  ,  |  .  |  /  | DEL |
-//                   | PLY | GUI | MO1 | SPC | CTL |     | SHF | RET | MO2 | ALT | GUI |
+// Hold keys: (mods are symetrical)
+// |     |     | A-G | C-G | C-A |SCA-G|                          |     |     |     |     |     |     |
+// |     |  `  |  G  |  A  |  C  | CAG |                          |     |     |     |     |  '  |     |
+// |     |  ~  | S-G | S-A | S-C | SCA |     |     |~~|     |     |     |     |     |     |  "  |     |
+//                   |     | L4  | Shf | L2  |     |~~|     | Shf | L3  | L5  |     |     
+// ---------------------------------------------------------------------------------------------------------------------------------
+// |     |  Q  |  W  |  E  |  R  |  T  |                          |  Y  |  U  |  I  |  O  |  P  |     |
+// |     |  A  |  S  |  D  |  F  |  G  |                          |  H  |  J  |  K  |  L  |  ;  |     |
+// |     |  Z  |  X  |  C  |  V  |  B  |     |     |~~| L3  |     |  N  |  M  |  ,  |  .  |  /  |     |
+//                   |     | Esc | SPC | TAB |     |~~|     | RET | BKS | DEL |     |
             bindings = <
-    &kp ESC   &kp Q &kp W &kp E      &kp R    &kp T                                        &kp Y &kp U    &kp I     &kp O   &kp P    &kp BKSP
-    &kp TAB   &kp A &kp S &kp D      &kp F    &kp G                                        &kp H &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-    &kp LSHFT &kp Z &kp X &kp C      &kp V    &kp B &mo 2     &kp LALT   &to 3     &mo 1   &kp N &kp M    &kp COMMA &kp DOT &kp FSLH &kp DEL
-                          &kp C_PLAY &kp LGUI &mo 1 &kp SPACE &kp LCTRL  &kp RSHFT &kp RET &mo 2 &kp RALT &kp RGUI
+    &none &kp Q      &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                                         &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P        &none
+    &none &hl GRAV A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                             &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &hl SQT SEMI &none
+    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B     &none     &none     &to 1 &none         &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH     &none
+                                    &none          &lt 4 ESC       &tm LSHFT SPACE        &lt 2 TAB &none     &none &tm RSHFT RET &lt 3 BKSP             &lt 5 DEL       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
@@ -61,48 +67,11 @@
 
         layer_1 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |       |  1  |  2  |  3  |  4  |  5  |                                  |  6  |  7  |  8  |  9  |   0   |   -   |
-// |       |  !  |  @  |  #  |  $  |  %  |                                  |  ^  |  &  |  *  |  (  |   )   |   \   |
-// |       |  `  |  ~  |  |  |  =  |  +  |      |        |  |        |      |  _  |  [  |  ]  |  {  |   }   |       |
-//                     |     |     |     |      |        |  |        |      |     |     |     |
-            bindings = <
-    &trans &kp N1   &kp N2   &kp N3   &kp N4   &kp N5                                 &kp N6    &kp N7   &kp N8   &kp N9   &kp N0   &kp MINUS
-    &trans &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCT                               &kp CRRT  &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp BSLH
-    &trans &kp GRAV &kp TILD &kp PIPE &kp EQL  &kp PLUS &trans &trans   &trans &trans &kp UNDER &kp LBKT &kp RBKT &kp LBRC &kp RBRC &trans
-                             &trans   &trans   &trans   &trans &trans   &trans &trans &trans    &trans   &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp PG_UP PG_DN>;
-        };
-
-        layer_2 {
-// ---------------------------------------------------------------------------------------------------------------------------------
-// |BT/next|  F1  |  F2  |  F3   |  F4  |  F5  |                                  |  F6  |  F7  |  F8  |  F9   | F10  |BT/usb|
-// |BT/clr | MUTE | NEXT | N-TRK | PLAY | VOL+ |                                  | LEFT | DOWN |  UP  | RIGHT | F11  |      |
-// |       |      | PREV | P-TRK | PAUS | VOL- |      |        |  |        |      | HOME | P-DW | P-UP |  END  | F12  |      |
-//                       |       |      |      |      |        |  |        |      |      |      |      |
-            bindings = <
-    &bt BT_NXT &kp F1     &kp F2     &kp F3   &kp F4      &kp F5                                  &kp F6   &kp F7   &kp F8   &kp F9    &kp F10 &out OUT_TOG
-    &bt BT_CLR &kp C_MUTE &kp C_NEXT &kp C_FF &kp C_PLAY  &kp VOLU                                &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp F11 &trans
-    &trans     &none      &kp C_PREV &kp C_RW &kp C_PAUSE &kp VOLD &trans &trans    &trans &trans &kp HOME &kp PGDN &kp PGUP &kp END   &kp F12 &trans
-                                     &trans   &trans      &trans   &trans &trans    &trans &trans &trans   &trans   &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
-        };
-
-// ---------------------------------------------------------------------------------------------------------------------------------
-// This starts the completely new layer system. They are on their own, but just shifted down to facilitate switching back to the
-// old layers.
-// ---------------------------------------------------------------------------------------------------------------------------------
-
-        layer_3 {
-// ---------------------------------------------------------------------------------------------------------------------------------
 // Hold keys: (mods are symetrical)
 // |     |     | A-G | C-G | C-A |SCA-G|                          |     |     |     |     |     |     |
 // |     |  `  |  G  |  A  |  C  | CAG |                          |     |     |     |     |  '  |     |
 // |     |  ~  | S-G | S-A | S-C | SCA |     |     |~~|     |     |     |     |     |     |  "  |     |
-//                   |     | L6  | Shf | L4  |     |~~|     | Shf | L5  | L7  |     |     
+//                   |     | L4  | Shf | L2  |     |~~|     | Shf | L3  | L5  |     |     
 // ---------------------------------------------------------------------------------------------------------------------------------
 // Tap keys:
 // |     |  Q  |  W  |  F  |  P  |  B  |                          |  J  |  L  |  U  |  Y  |  ;  |     |
@@ -113,13 +82,13 @@
     &none &kp Q      &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                                         &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI     &none
     &none &hl GRAV A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                             &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &hl SQT O    &none
     &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V     &none     &none     &none &to 0         &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &hl DQT FSLH &none
-                                    &none          &lt 6 ESC       &tm LSHFT SPACE        &lt 4 TAB &none     &none &tm RSHFT RET &lt 5 BKSP             &lt 7 DEL       &none
+                                    &none          &lt 4 ESC       &tm LSHFT SPACE        &lt 2 TAB &none     &none &tm RSHFT RET &lt 3 BKSP             &lt 5 DEL       &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp LEFT RIGHT>;
         };
 
-        layer_4 {
+        layer_2 {
 // Hold keys are the same as above, munus the outer column
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |     |  1  |  2  |  3  |  4  |  5  |                           |  6  |  7  |  8  |  9  |  0   |     |
@@ -136,47 +105,47 @@
             sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp PG_UP PG_DN>;
         };
 
-        layer_5 {
+        layer_3 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |                          |     |     |     |     |     |BTUSB|
-// |     |     |     |     |     |     |                          |LEFT |DOWN | UP  |RIGHT|     |     |
-// |     |     |     |     |     |     |     |     |  |     |     |HOME |P-DW |P-UP | END |     |     |
+// |     |     |     |     |     |     |                          | F6  | F7  | F8  | F9  | F10 |BTUSB|
+// |     |     |     |     |     |     |                          |LEFT |DOWN | UP  |RIGHT| F11 |     |
+// |     |     |     |     |     |     |     |     |  |     |     |HOME |P-DW |P-UP | END | F12 |     |
 //                   |     |     |     |     |     |  |     |     |     |     |     |
             bindings = <
-    &trans &trans &trans &trans &trans &trans                                &none    &none     &none     &none     &none    &out OUT_TOG
-    &trans &trans &trans &trans &trans &trans                                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none    &trans
-    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &kp HOME &kp PGDN  &kp PGUP  &kp END   &none    &trans
+    &trans &trans &trans &trans &trans &trans                                &kp F6   &kp F7    &kp F8    &kp F9    &kp F10  &out OUT_TOG
+    &trans &trans &trans &trans &trans &trans                                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp F11  &trans
+    &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &kp HOME &kp PGDN  &kp PGUP  &kp END   &kp F12  &trans
                          &trans &trans &trans &trans &trans    &trans &trans &trans   &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
         };
 
-        layer_6 {
+        layer_4 {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |     | F1  | F2  | F3  | F4  | F5  |                          |     |     |     |     |     |     |
-// |     |NEXT | FWD |PLAY |VOL-U|MUTE |                          |     |     |     |     |     |     |
-// |     |PREV | BWD |PAUSE|VOL-D|     |     |     |~~|     |     |     |     |     |     |     |     |
+// |     | FWD |NEXT |PLAY |VOL-U|MUTE |                          |     |     |     |     |     |     |
+// |     | BWD |PREV |PAUSE|VOL-D|     |     |     |~~|     |     |     |     |     |     |     |     |
 //                   |     |     |     |     |     |~~|     |     |     |     |     |
             bindings = <    
-    &trans &kp F1     &kp F2   &kp F3      &kp F4   &kp F5                                    &trans &trans &trans &trans &trans &trans
-    &trans &kp C_NEXT &kp C_FF &kp C_PLAY  &kp VOLU &kp C_MUTE                                &trans &trans &trans &trans &trans &trans
-    &trans &kp C_PREV &kp C_RW &kp C_PAUSE &kp VOLD &trans     &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans 
+    &trans &kp F1   &kp F2     &kp F3      &kp F4   &kp F5                                    &trans &trans &trans &trans &trans &trans
+    &trans &kp C_FF &kp C_NEXT &kp C_PLAY  &kp VOLU &kp C_MUTE                                &trans &trans &trans &trans &trans &trans
+    &trans &kp C_RW &kp C_PREV &kp C_PAUSE &kp VOLD &trans     &trans &trans    &trans &trans &trans &trans &trans &trans &trans &trans 
                                &trans      &trans   &trans     &trans &trans    &trans &trans &trans &trans &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(LS(TAB)) LC(TAB) &inc_dec_kp PG_UP PG_DN>;
         };
 
-        layer_7 {
+        layer_5 {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |     |     |     |     |     |     |                          | F6  | F7  | F8  | F9  | F10 |     |
-// |     |     |     |     |     |     |                          |     |     |     | F11 | F12 |     |
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
+// |     |     |     |     |     |     |                          |     |     |     |     |     |     |
 // |     |     |     |     |     |     |     |     |~~|     |     |     |     |     |     |     |     |
 //                   |     |     |     |     |     |~~|     |     |     |     |     |
             bindings = <
-    &trans &trans &trans &trans &trans &trans                                &kp F6 &kp F7 &kp F8 &kp F9  &kp F10 &none
-    &trans &trans &trans &trans &trans &trans                                &trans &trans &trans &kp F11 &kp F12 &none
+    &trans &trans &trans &trans &trans &trans                                &trans &trans &trans &trans  &trans  &none
+    &trans &trans &trans &trans &trans &trans                                &trans &trans &trans &trans  &trans  &none
     &trans &trans &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans  &trans  &none
                                 &trans &trans &trans &trans    &trans &trans &trans &trans &trans
             >;
