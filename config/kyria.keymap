@@ -26,7 +26,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
         tm: thumb_mods {
@@ -58,7 +58,7 @@
             bindings = <
     &none &kp Q      &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                                           &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P        &none
     &none &hl GRAV A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                               &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &hl SQT SEMI &none
-    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B     &none           &none     &to 1 &none     &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH     &none
+    &none &hl TILD Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B     &none           &none     &to 1 &none     &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &hl DQT FSLH &none
                                     &none          &lt 4 ESC       &lt 2 TAB              &tm LSHFT SPACE &none     &none &lt 3 RET &tm RSHFT BKSP         &lt 5 DEL       &none
             >;
 
