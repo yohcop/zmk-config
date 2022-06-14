@@ -1,0 +1,293 @@
+[
+  {
+    "name": "mykeeb",
+    "switchMount": "cherry",
+    "switchBrand": "kailh",
+    "switchType": "PG151101D49/D09"
+  },
+  [
+    {
+      "y": 0.25,
+      "x": 3,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1
+      ]
+    },
+    "3\n\nF3\n\n\n\n\n\n\nf",
+    {
+      "x": 9,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1,
+        2
+      ]
+    },
+    "8\n\nF8\nbks\n\n\n\n\n\nu"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "fa": [
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    "2\n\nF2\nCOLEMAK\n\n\n\n\n\nw",
+    {
+      "x": 1,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "4\n\nF4\n\nAlt-Ctl\n\n\n\n\np",
+    {
+      "x": 7,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1
+      ]
+    },
+    "7\n\nF7\n~\n\n\n\n\n\nl",
+    {
+      "x": 1,
+      "fa": [
+        2,
+        0,
+        1,
+        2
+      ]
+    },
+    "9\n\nF9\ndel\n\n\n\n\n\ny"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "fa": [
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    "5\n\nF5\nBT/USB\n\n\n\n\n\nb",
+    {
+      "x": 5
+    },
+    "6\n\nF6\n\n\n\n\n\n\nj"
+  ],
+  [
+    {
+      "y": -0.625,
+      "x": 1
+    },
+    "1\n\nF1\nQWERTY\n\n\n\n\n\nq",
+    {
+      "x": 13,
+      "fa": [
+        2,
+        0,
+        1
+      ]
+    },
+    "0\n\nF10\n`\n\n\n\n\n\n;"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "#\n\nPLAY\n\nAlt\n\n\n\n\ns",
+    {
+      "x": 9,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    "*\n\n\nUP\n\n\n\n\n\ne"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "@\n\n>>\n\nGui\n\n\n\n\nr",
+    {
+      "x": 1
+    },
+    "$\n\nVOL+\n\nCtl\n\n\n\n\nt",
+    {
+      "x": 7,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a"
+    },
+    "&\n\nF12\nDOWN\n\n\n\n\n\nn",
+    {
+      "x": 1
+    },
+    "(\n\n\nRIGHT\n\n\n\n\n\ni"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "%\n\nMUTE\n\nG-A-C\n\n\n\n\ng",
+    {
+      "x": 5,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a"
+    },
+    "^\n\nF11\nLEFT\n\n\n\n\n\nm"
+  ],
+  [
+    {
+      "y": -0.625,
+      "x": 1,
+      "t": "#bc251e\n\n#0046ad\n\n#0046ad\n\n\n\n\n#1a1a1a"
+    },
+    "!\n\n>\n\nFUNC\n\n\n\n\na",
+    {
+      "x": 13,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n#0046ad\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1,
+        0
+      ]
+    },
+    ")\n\n\n'\nFUNC\n\n\n\n\no"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 3,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "=\n\nPAUSE\n\nShift-Alt\n\n\n\n\nc",
+    {
+      "x": 9,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1,
+        1
+      ]
+    },
+    "}\n\n\nPG-UP\n\n\n\n\n\n,"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 2,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "|\n\n<<\n\nShift-Gui\n\n\n\n\nx",
+    {
+      "x": 1
+    },
+    "+\n\nVOL-\n\nShift-Ctl\n\n\n\n\nd",
+    {
+      "x": 7,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a"
+    },
+    "{\n\n\nPG-DWN\n\n\n\n\n\nh",
+    {
+      "x": 1
+    },
+    "[\n\n\nEND\n\n\n\n\n\n."
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 5,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "-\n\n\n\n\n\n\n\n\nv",
+    {
+      "x": 5,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a"
+    },
+    "_\n\n\nHOME\n\n\n\n\n\nk"
+  ],
+  [
+    {
+      "y": -0.625,
+      "x": 1,
+      "t": "#bc251e\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a"
+    },
+    "\\\n\n<\n\n\n\n\n\n\nz",
+    {
+      "x": 13,
+      "t": "#bc251e\n\n#0046ad\n#f67f00\n\n\n\n\n\n#1a1a1a",
+      "fa": [
+        2,
+        0,
+        1,
+        0
+      ]
+    },
+    "]\n\n\n\"\n\n\n\n\n\n/"
+  ],
+  [
+    {
+      "r": 15,
+      "rx": 4,
+      "ry": 8.175,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#1a1a1a\n\n\n\n#bc251e",
+      "a": 7,
+      "f": 3
+    },
+    "tab\n\n\n\nNUM"
+  ],
+  [
+    {
+      "r": 30,
+      "y": -1,
+      "x": -0.5,
+      "t": "#000000\n\n#0046ad\n\n\n\n\n\n\n#1a1a1a",
+      "a": 4,
+      "f": 3
+    },
+    "\n\nesc\n\nShift\n\n\n\n\nspc"
+  ],
+  [
+    {
+      "r": -30,
+      "rx": 13,
+      "y": -4.675000000000001,
+      "x": -0.5,
+      "t": "#1a1a1a\n\n\n\n#f67f00",
+      "a": 7,
+      "f": 3
+    },
+    "ret\n\n\n\nMOVE"
+  ],
+  [
+    {
+      "r": -15,
+      "y": -1,
+      "x": -0.5,
+      "t": "#1a1a1a",
+      "f": 3
+    },
+    "bks\n\n\n\nShift"
+  ]
+]
