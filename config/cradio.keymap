@@ -47,9 +47,9 @@
 // |  Z  |  X  |  C  |  V  |  B  |                    |  N  |  M  |  ,  |  .  |  /  |
 //                         | TAB | SPC |        | RET | BKS |
             bindings = <
-    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                                &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P      &none
-    &lt 4 A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                    &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &lt 4 SEMI &none
-    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B                                    &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH   &none
+    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                                &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P     
+    &lt 4 A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                    &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &lt 4 SEMI
+    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B                                    &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH  
                                                           &lt 2 TAB              &tm LSHFT SPACE      &lt 3 RET &tm RSHFT BKSP
             >;
         };
