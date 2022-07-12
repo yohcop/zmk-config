@@ -24,4 +24,7 @@ west zephyr-export
 
 rm -rf build
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2 && west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
+
+west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=cradio_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_left_nice_nano.uf2 && west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=cradio_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_right_nice_nano.uf2
+
 ```
