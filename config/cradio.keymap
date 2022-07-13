@@ -45,12 +45,12 @@
 // |  Q  |  W  |  E  |  R  |  T  |                    |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |                    |  H  |  J  |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B  |                    |  N  |  M  |  ,  |  .  |  /  |
-//                         | TAB | SPC |        | RET | BKS |
+//                         | TAB | SPC |        |     | RET |
             bindings = <
-    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                                &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P     
-    &lt 4 A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                    &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &lt 4 SEMI
-    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B                                    &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH  
-                                                          &lt 2 TAB              &tm LSHFT SPACE      &lt 3 RET &tm RSHFT BKSP
+    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                            &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P     
+    &lt 4 A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &lt 4 SEMI
+    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B                                &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH  
+                                                          &lt 2 TAB              &tm LSHFT SPACE      &mo 3 &tm RSHFT RET
             >;
         };
 
@@ -62,12 +62,12 @@
 // |  Q  |  W  |  F  |  P  |  B  |                    |  J  |  L  |  U  |  Y  |  ;  |
 // |  A  |  R  |  S  |  T  |  G  |                    |  M  |  N  |  E  |  I  |  O  |
 // |  Z  |  X  |  C  |  D  |  V  |                    |  K  |  H  |  ,  |  .  |  /  |
-//                         | TAB | SPC |        | RET | BKS |
+//                         | TAB | SPC |        |     | RET |
             bindings = <
-    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                                  &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI
-    &lt 4 A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                      &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &lt 4 O 
-    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V                                      &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH
-                                                          &lt 2 TAB              &tm LSHFT SPACE        &lt 3 RET &tm RSHFT BKSP
+    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                              &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI
+    &lt 4 A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                  &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &lt 4 O 
+    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V                                  &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH
+                                                          &lt 2 TAB              &tm LSHFT SPACE        &mo 3 &tm RSHFT RET
             >;
         };
 
@@ -108,14 +108,14 @@
 // Note: Layer 4 doesn't have home row mods, but technically they could be added.
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
-// | FWD |NEXT |PLAY |VOL-U|MUTE |                    | F11 | F12 |     |     |     |
-// | BWD |PREV |PAUSE|VOL-D|     |                    |     |     |     |     |     |
-//                         |     |     |        |     |     |
+// |-----|MUTE |VOL-D|VOL-U|PLAY |                    | F11 | F12 |     |     |-----|
+// |PAUSE|PREV | RWD | FWD |NEXT |                    |     |     |     |     |     |
+//                         |     | ESC |        |     |     |
             bindings = <    
-    &kp F1   &kp F2     &kp F3      &kp F4   &kp F5                          &kp F6  &kp F7  &kp F8 &kp F9 &kp F10
-    &kp C_FF &kp C_NEXT &kp C_PLAY  &kp VOLU &kp C_MUTE                      &kp F11 &kp F12 &trans &trans &trans 
-    &kp C_RW &kp C_PREV &kp C_PAUSE &kp VOLD &trans                          &trans  &trans  &trans &trans &trans  
-                                             &trans     &trans        &trans &trans
+    &kp F1      &kp F2     &kp F3   &kp F4   &kp F5                          &kp F6  &kp F7  &kp F8 &kp F9 &kp F10
+    &trans      &kp C_MUTE &kp VOLD &kp VOLU &kp C_PLAY                      &kp F11 &kp F12 &trans &trans &trans 
+    &kp C_PAUSE &kp C_PREV &kp C_RW &kp C_FF &kp C_NEXT                      &trans  &trans  &trans &trans &trans  
+                                             &trans     &kp ESC       &trans &trans
             >;
         };
 

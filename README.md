@@ -23,16 +23,24 @@ west update
 west zephyr-export
 
 rm -rf build
+```
 
+For Kyria
+```
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_left_nice_nano.uf2 && west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=kyria_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 kyria_right_nice_nano.uf2
+```
 
-west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=cradio_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_left_nice_nano.uf2 && west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=cradio_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_right_nice_nano.uf2
+For Cradio/Sweep
+```
+west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=cradio_left -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_left_nice_nano_v2.uf2 && west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=cradio_right -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 cradio_right_nice_nano_v2.uf2
 ```
 
 If the two halves get unpaired, build a settings_reset image, and flash it to
 both, then flash again the keyboard firmwares.
-See https://zmk.dev/docs/troubleshooting#split-keyboard-halves-unable-to-pair
+See https://zmk.dev/docs/troubleshooting#split-keyboard-halves-unable-to-pair.
+Make sure to use the right board.
 
 ```
 west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=settings_reset -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 settings_reset.uf2
+west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=settings_reset -DZMK_CONFIG="$(pwd)/config" && cp build/zephyr/zmk.uf2 settings_reset.uf2
 ```
