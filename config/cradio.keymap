@@ -92,12 +92,12 @@
 // Note: Layer 3 doesn't have homerow mods on the right hand side, and some home row mods combos aren't available on the left.
 //       This is intentional, at least for the movement and bks/del keys, this way they can be repeated by holding them.
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |QWERT|COLMK|     |     |BT/USB|                   |     |  ~  | BKS | DEL |  `  |
+// |QWERT|COLMK|     |RESET|BT/USB|                   |     |  ~  | BKS | DEL |  `  |
 // |     |     |     |     |     |                    |LEFT |DOWN | UP  |RIGHT|  '  |
 // |     |     |     |     |     |                    |HOME |P-DW |P-UP | END |  "  |
 //                         |     |     |        |     |     |            
             bindings = <
-    &to 0  &to 1  &trans &trans &out OUT_TOG                      &none    &kp TILD  &kp BKSP  &kp DEL   &kp GRAV
+    &to 0  &to 1  &trans &reset &out OUT_TOG                      &none    &kp TILD  &kp BKSP  &kp DEL   &kp GRAV
     &trans &trans &trans &trans &trans                            &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp SQT
     &trans &trans &trans &trans &trans                            &kp HOME &kp PGDN  &kp PGUP  &kp END   &kp DQT
                                 &trans       &trans        &trans &trans
