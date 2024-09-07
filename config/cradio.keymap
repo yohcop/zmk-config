@@ -37,20 +37,20 @@
         default_layer {
 // ---------------------------------------------------------------------------------------------------------------------------------
 // Hold keys: (mods are symetrical)
-// |     | A-G | C-G | C-A |SCA-G|                    |     |     |     |     |     |
-// | L4  |  G  |  A  |  C  | CAG |                    |     |     |     |     |     |
-// |     | S-G | S-A | S-C | SCA |                    |     |     |     |     |     |
-//                         | L2  | Shf |        | L3  | Shf |     
+// |     | A-G | C-G | C-A | SCA |                    |     |     |     |     |     |
+// |     |  G  |  A  |  C  | CAG |                    |     |     |     |     |     |
+// |     | S-G | S-A | S-C | SCAG|                    |     |     |     |     |     |
+//                         | L3  |     |        | L2  | L4  |     
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |                    |  Y  |  U  |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |                    |  H  |  J  |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B  |                    |  N  |  M  |  ,  |  .  |  /  |
-//                         | TAB | SPC |        |     | RET |
+//                         | TAB |Shift|        | RET | SPC |
             bindings = <
-    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LA(LGUI))) T                            &hm RS(RC(RA(RGUI))) Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P     
-    &lt 4 A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI)) G                                &hm RC(RA(RGUI)) H     &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &lt 4 SEMI
-    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LALT)) B                                &hm RS(RC(RALT)) N     &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH  
-                                                          &lt 2 TAB              &tm LSHFT SPACE      &mo 3 &tm RSHFT RET
+    &kp Q &hm LA(LGUI) W &hm LC(LGUI) E &hm LA(LCTRL) R &hm LS(LC(LALT))     T                            &hm RS(RC(RALT))     Y &hm RA(RCTRL) U &hm RC(RGUI) I     &hm RA(RGUI) O   &kp P     
+    &kp A &hm    LGUI  S &hm    LALT  D &hm    LCTRL  F &hm LC(LA(LGUI))     G                            &hm RC(RA(RGUI))     H &hm    RCTRL  J &hm    RALT  K     &hm    RGUI  L   &kp SEMI
+    &kp Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) V &hm LS(LC(LA(LGUI))) B                            &hm RS(RC(RA(RGUI))) N &hm RS(RCTRL) M &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH  
+                                                        &lt 3 TAB              &kp LSHFT        &lt 2 RET &lt 4 SPACE
             >;
         };
 
@@ -64,58 +64,54 @@
 // |  Z  |  X  |  C  |  D  |  V  |                    |  K  |  H  |  ,  |  .  |  /  |
 //                         | TAB | SPC |        |     | RET |
             bindings = <
-    &kp Q   &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                              &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI
-    &lt 4 A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI)) G                                  &hm RC(RA(RGUI)) M     &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &lt 4 O 
-    &kp Z   &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT)) V                                  &hm RS(RC(RALT)) K     &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH
-                                                          &lt 2 TAB              &tm LSHFT SPACE        &mo 3 &tm RSHFT RET
+    &kp Q &hm LA(LGUI) W &hm LC(LGUI) F &hm LA(LCTRL) P &hm LS(LC(LA(LGUI))) B                              &hm RS(RC(RA(RGUI))) J &hm RA(RCTRL) L &hm RC(RGUI) U     &hm RA(RGUI) Y   &kp SEMI
+    &kp A &hm    LGUI  R &hm    LALT  S &hm    LCTRL  T &hm LC(LA(LGUI))     G                              &hm RC(RA(RGUI))     M &hm    RCTRL  N &hm    RALT  E     &hm    RGUI  I   &kp O
+    &kp Z &hm LS(LGUI) X &hm LS(LALT) C &hm LS(LCTRL) D &hm LS(LC(LALT))     V                              &hm RS(RC(RALT))     K &hm RS(RCTRL) H &hm RS(RALT) COMMA &hm RS(RGUI) DOT &kp FSLH
+                                                        &lt 3 TAB              &kp LSHFT        &lt 2 RET &lt 4 SPACE
             >;
         };
 
         layer_2 {
 // ---------------------------------------------------------------------------------------------------------------------------------
+// |  !  |  @  |  #  |  $  |  %  |                     |  ^  |  &  |  *  |  ~  |  |   |
 // |  1  |  2  |  3  |  4  |  5  |                     |  6  |  7  |  8  |  9  |  0   |
-// |  !  |  @  |  #  |  $  |  %  |                     |  ^  |  &  |  *  |  (  |  )   |
-// |  \  |  |  |  =  |  +  |  -  |                     |  _  |  {  |  }  |  [  |  ]   |
+// |  {  |  [  |  (  |  =  |  -  |                     |  _  |  +  |  )  |  ]  |  }   |
 //                         |     |     |        |      |     |
             bindings = <
-    &kp N1   &hm LA(LGUI) N2   &hm LC(LGUI) N3   &hm LA(LCTRL) N4   &hm LS(LC(LA(LGUI))) N5                      &hm RS(RC(RA(RGUI))) N6 &hm RA(RCTRL) N7   &hm LC(RGUI) N8   &hm RA(RGUI) N9   &kp N0  
-    &kp EXCL &hm    LGUI  AT   &hm    LALT  HASH &hm    LCTRL  DLLR &hm LC(LA(LGUI)) PRCT                        &hm RC(RA(RGUI)) CRRT   &hm    RCTRL  AMPS &hm    RALT  STAR &hm    RGUI  LPAR &kp RPAR
-    &kp BSLH &hm LS(LGUI) PIPE &hm LS(LALT) EQL  &hm LS(LCTRL) PLUS &hm LS(LC(LALT)) MINUS                       &hm RS(RC(RALT)) UNDER  &hm RS(RCTRL) LBRC &hm LS(RALT) RBRC &hm RS(RGUI) LBKT &kp RBKT
-                                                                    &trans                  &trans        &trans &trans
+    &kp EXCL &kp AT   &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET  &kp AMPS &kp STAR &kp TILDE &kp PIPE
+    &kp N1   &kp N2   &kp N3    &kp N4    &kp N5                         &kp N6     &kp N7   &kp N8   &kp N9    &kp N0  
+    &kp LBRC &kp LBKT &kp LPAR  &kp EQUAL &kp MINUS                      &kp UNDER  &kp PLUS &kp RPAR &kp RBKT  &kp RBRC
+                                          &trans    &trans        &trans &trans
             >;
         };
 
         layer_3 {
-// QWERT is going to layer 0 for qerty
-// COLMK is going to layer 1 for colemak
-// 
-// Note: Layer 3 doesn't have homerow mods on the right hand side, and some home row mods combos aren't available on the left.
-//       This is intentional, at least for the movement and bks/del keys, this way they can be repeated by holding them.
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |QWERT|COLMK|     |RESET|BT/USB|                   |     |  ~  | BKS | DEL |  `  |
-// |     |     |     |     |     |                    |LEFT |DOWN | UP  |RIGHT|  '  |
-// |     |     |     |     |     |                    |HOME |P-DW |P-UP | END |  "  |
-//                         |     |     |        |     |     |            
-            bindings = <
-    &to 0  &to 1  &trans &reset &out OUT_TOG                      &none    &kp TILD  &kp BKSP  &kp DEL   &kp GRAV
-    &trans &trans &trans &trans &trans                            &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp SQT
-    &trans &trans &trans &trans &trans                            &kp HOME &kp PGDN  &kp PGUP  &kp END   &kp DQT
-                                &trans       &trans        &trans &trans
+// | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
+// | ESC |PLAY |VOL-U|VOL-D|MUTE |                    |PrScr|ScrLk|Pause|Inser| F11 |
+// |PAUSE| RWD | PREV|NEXT | FWD |                    | App |     |     |     | F12 |
+//                         |     |     |        |     |     |
+            bindings = <    
+    &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                          &kp F6          &kp F7             &kp F8          &kp F9     &kp F10
+    &kp ESC     &kp C_PLAY &kp K_VOL_UP &kp K_VOL_DN &kp C_MUTE                      &kp PRINTSCREEN &kp LOCKING_SCROLL &kp PAUSE_BREAK &kp INSERT &kp F11
+    &kp C_PAUSE &kp C_RW   &kp C_PREV   &kp C_NEXT   &kp C_FF                        &kp K_APP       &none              &none           &none      &kp F12 
+                                                     &trans     &trans        &trans &trans
             >;
         };
 
         layer_4 {
-// Note: Layer 4 doesn't have home row mods, but technically they could be added.
+// QWERT is going to layer 0 for qerty
+// COLMK is going to layer 1 for colemak
 // ---------------------------------------------------------------------------------------------------------------------------------
-// | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
-// |-----|MUTE |VOL-D|VOL-U|PLAY |                    | F11 | F12 |     |     |-----|
-// |PAUSE|PREV | RWD | FWD |NEXT |                    |     |     |     |     |     |
-//                         |     | ESC |        |     |     |
-            bindings = <    
-    &kp F1      &kp F2     &kp F3   &kp F4   &kp F5                          &kp F6  &kp F7  &kp F8 &kp F9 &kp F10
-    &trans      &kp C_MUTE &kp VOLD &kp VOLU &kp C_PLAY                      &kp F11 &kp F12 &trans &trans &trans 
-    &kp C_PAUSE &kp C_PREV &kp C_RW &kp C_FF &kp C_NEXT                      &trans  &trans  &trans &trans &trans  
-                                             &trans     &kp ESC       &trans &trans
+// |QWERT|COLMK|     |RESET|BT/USB|                   |     |     | BKS | DEL |     |
+// |     |     |     |     |     |                    |LEFT |DOWN | UP  |RIGHT|     |
+// |  \  |  `  |  '  |  "  |     |                    |HOME |P-DW |P-UP | END |  /  |
+//                         |     |     |        |     |     |            
+            bindings = <
+    &to 0    &to 1     &none   &sys_reset &out OUT_TOG                      &none    &none     &kp BSPC  &kp DEL   &none
+    &none    &none     &none   &none      &none                             &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
+    &kp BSLH &kp GRAVE &kp SQT &kp DQT    &trans                            &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp FSLH
+                                          &trans       &trans        &trans &trans
             >;
         };
 
