@@ -35,6 +35,54 @@
         };
     };
 
+    // KVM hotkey macros: double Scroll Lock + a key, or double Right Alt.
+    // KVMs watch for the hotkey prefix as ordinary typing; taps sent
+    // back-to-back at USB speed can be missed, hence the pauses.
+    macros {
+        kvm_1: kvm_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp N1>;
+        };
+        kvm_2: kvm_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp N2>;
+        };
+        kvm_up: kvm_up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp UP>;
+        };
+        kvm_down: kvm_down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp DOWN>;
+        };
+        kvm_left: kvm_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp LEFT>;
+        };
+        kvm_right: kvm_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp SCROLLLOCK &kp SCROLLLOCK &kp RIGHT>;
+        };
+        ralt_2x: ralt_2x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <50>;
+            bindings = <&kp RALT &kp RALT>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -93,28 +141,27 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // | F1  | F2  | F3  | F4  | F5  |                    | F6  | F7  | F8  | F9  | F10 |
 // | ESC |PLAY |VOL-D|VOL-U|MUTE |                    |PrScr|ScrLk|Pause|Inser| F11 |
-// |PAUSE| RWD | PREV|NEXT | FWD |                    | App |     |     |     | F12 |
+// |PAUSE| RWD | PREV|NEXT | FWD |                    | App |KVM ←|KVM →|RAlt2| F12 |
 //                         |     |     |        |     |     |
-            bindings = <    
-    &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                          &kp F6          &kp F7             &kp F8          &kp F9     &kp F10
-    &kp ESC     &kp C_PLAY &kp K_VOL_DN &kp K_VOL_UP &kp C_MUTE                      &kp PRINTSCREEN &kp LOCKING_SCROLL &kp PAUSE_BREAK &kp INSERT &kp F11
-    &kp C_PAUSE &kp C_RW   &kp C_PREV   &kp C_NEXT   &kp C_FF                        &kp K_APP       &none              &none           &none      &kp F12 
+            bindings = <
+    &kp F1      &kp F2     &kp F3       &kp F4       &kp F5                          &kp F6          &kp F7         &kp F8          &kp F9     &kp F10
+    &kp ESC     &kp C_PLAY &kp K_VOL_DN &kp K_VOL_UP &kp C_MUTE                      &kp PRINTSCREEN &kp SCROLLLOCK &kp PAUSE_BREAK &kp INSERT &kp F11
+    &kp C_PAUSE &kp C_RW   &kp C_PREV   &kp C_NEXT   &kp C_FF                        &kp K_APP       &kvm_left      &kvm_right      &ralt_2x   &kp F12
                                                      &trans     &mo 5         &trans &trans
             >;
         };
 
         layer_4 {
-// QWERT is going to layer 0 for qerty
-// COLMK is going to layer 1 for colemak
+// KVM ↑/↓/1/2 send the KVM hotkey (Scroll Lock twice + the key).
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |QWERT|COLMK|     |RESET|BT/USB|                   |     |     | BKS | DEL |     |
-// |     |     |     |     |     |                    |LEFT |DOWN | UP  |RIGHT|     |
-// |  \  |  `  |  '  |  "  |     |                    |HOME |P-DW |P-UP | END |  /  |
-//                         |     |     |        |     |     |            
+// |KVM ↑| A-G | C-G | C-A | SCA |                    |     |     | BKS | DEL |     |
+// |KVM ↓|  G  |  A  |  C  |KVM 1|                    |LEFT |DOWN | UP  |RIGHT|     |
+// |  \  |  `  |  '  |  "  |KVM 2|                    |HOME |P-DW |P-UP | END |  /  |
+//                         |     |     |        |     |     |
             bindings = <
-    &none    &kp LA(LGUI)       &kp LC(LGUI)     &kp LA(LCTRL)     &kp LS(LC(LALT))                          &none    &none     &kp BSPC  &kp DEL   &none
-    &none    &kp    LGUI        &kp    LALT      &kp    LCTRL      &kp LC(LA(LGUI))                          &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
-    &kp BSLH &hm LS(LGUI) GRAVE &hm LS(LALT) SQT &hm LS(LCTRL) DQT &kp LS(LC(LA(LGUI)))                      &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp FSLH
+    &kvm_up   &kp LA(LGUI)      &kp LC(LGUI)     &kp LA(LCTRL)     &kp LS(LC(LALT))                          &none    &none     &kp BSPC  &kp DEL   &none
+    &kvm_down &kp   LGUI        &kp    LALT      &kp    LCTRL      &kvm_1                                    &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
+    &kp BSLH &hm LS(LGUI) GRAVE &hm LS(LALT) SQT &hm LS(LCTRL) DQT &kvm_2                                    &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp FSLH
                                                                    &trans               &trans        &trans &trans
             >;
         };
